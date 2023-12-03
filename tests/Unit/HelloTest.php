@@ -14,10 +14,13 @@ class HelloTest extends TestCase
      */
     public function test_say_hello()
     {
+        // setup
+        $expected = collect(['foo' => 'bar']);
+
         // when
         $actual = Hello::say_hello(); 
 
         // then
-        $this->assertTrue($actual);
+        $this->assertEquals($actual, $expected);
     }
 }
