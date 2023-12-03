@@ -5,7 +5,7 @@ use Illuminate\Support\Collection;
 
 class Hello
 {
-    public static function say_hello(string $name) : Collection{
+    public static function say_hello(string $name = 'world') : Collection{
         return collect(['Hello' => $name]);
     }
 

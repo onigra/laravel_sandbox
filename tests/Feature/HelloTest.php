@@ -19,6 +19,6 @@ class HelloTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertExactJson(['foo' => 'bar']);
+            ->assertExactJson(['Hello' => 'world']);
     }
 }
