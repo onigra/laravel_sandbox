@@ -14,9 +14,6 @@ class HelloTest extends TestCase
      */
     public function test_say_hello()
     {
-        // setup
-        $expected = collect(['Hello' => 'world']);
-
         // given
         $name = 'world';
 
@@ -24,6 +21,7 @@ class HelloTest extends TestCase
         $actual = Hello::say_hello($name);
 
         // then
+        $expected = collect(['Hello' => 'world']);
         $this->assertEquals($actual, $expected);
     }
 }
