@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $result = Hello::say_hello();
+        $result = $request->has('name') === true ?
+            Hello::say_hello($request->input('name')) :
+            Hello::say_hello();
+
         return response()->json($result);
     }
 }
